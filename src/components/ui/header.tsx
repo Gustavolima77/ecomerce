@@ -101,7 +101,7 @@ const Header = () => {
       </Sheet>
 
       <h1 className="text-lg font-semibold">
-        <span className="text-primary">GLP</span> STORE
+        <span className="text-primary">GPL</span> STORE
       </h1>
 
       <Button size="icon" variant="outline">
