@@ -11,7 +11,11 @@ interface CartItemProps {
 }
 
 const cartItem = ({ product }: CartItemProps) => {
-  const { decreaseProductQuantity, increaseProductQuantity } =
+  const {
+    decreaseProductQuantity,
+    increaseProductQuantity,
+    removeProductFromCart,
+  } =
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useContext(CartContext);
 
@@ -21,6 +25,10 @@ const cartItem = ({ product }: CartItemProps) => {
 
   const handleIncreaseProductQuantityClick = () => {
     increaseProductQuantity(product.id);
+  };
+
+  const handleRemoveProductClick = () => {
+    removeProductFromCart(product.id);
   };
 
   return (
@@ -75,7 +83,11 @@ const cartItem = ({ product }: CartItemProps) => {
       </div>
 
       <div>
-        <Button size="icon" variant="outline">
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={handleRemoveProductClick}
+        >
           <TrashIcon size={16} />
         </Button>
       </div>
